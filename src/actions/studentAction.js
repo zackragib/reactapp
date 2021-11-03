@@ -29,7 +29,7 @@ export const getStudentList = (keywor) => async (dispatch) => {
         type: GET_STUDENT_REQUEST,
       });
         
-      const { data } = await axios.get(`http://127.0.0.1:8000/api${keywor}`);
+      const { data } = await axios.get(`https://recor-live.herokuapp.com/api${keywor}`);
   
       dispatch({
         type: GET_STUDENT_SUCCESS,
