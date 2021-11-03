@@ -11,8 +11,11 @@ function StudentInfo({ student }) {
     const disptach = useDispatch()
     
     const deleteHandler = (id) =>{
-        console.log(`ClickWorking  ${id}`)
-        disptach(deleteStudent(id))
+       
+        if (window.confirm('Are you sure?')) {
+            disptach(deleteStudent(id)) 
+        }
+        
     }
     return (
 
@@ -25,7 +28,7 @@ function StudentInfo({ student }) {
                     <LinkContainer to={`/student/${student.id}`}>
                     <Button variant="primary">View Details</Button>
                     </LinkContainer>
-                    <Button onClick={()=>{deleteHandler(student.id)}} className='float-end' variant="danger"><i class="fas fa-times"></i></Button>
+                    <Button onClick={()=>{deleteHandler(student.id)}} className='float-end' variant="danger"><i className="fas fa-times"></i></Button>
            </Card.Body>
         </Card>
         </div>

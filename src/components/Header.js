@@ -1,6 +1,7 @@
 import React from 'react'
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Container, Nav} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import SearchBx from '../components/SearchBx'
 
 function Header() {
     return (
@@ -19,7 +20,8 @@ function Header() {
                             </LinkContainer>
                 </Nav>
                
-            </Navbar.Collapse>
+                    </Navbar.Collapse>
+                    <SearchBx/>
             </Container>
             </Navbar>
         </div>

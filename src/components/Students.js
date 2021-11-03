@@ -6,18 +6,20 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { Col, Row } from 'react-bootstrap'
 
-function Students() {
+function Students({history}) {
 
     const studentList = useSelector((state) => state.studentList)
     const { students, error, loading } = studentList
     const studentDelete = useSelector((state) => state.studentDelete)
     const { success, loading: deleteLoading } = studentDelete
-    
+    let keywor = history.location.search
+
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getStudentList())
+        dispatch(getStudentList(keywor))
         
-    }, [dispatch, success])
+        
+    }, [dispatch, success, keywor])
 
     return (
         <div>

@@ -23,13 +23,13 @@ import {
 } from '../constants/studentConstants'
 import axios from "axios";
 
-export const getStudentList = () => async (dispatch) => {
+export const getStudentList = (keywor) => async (dispatch) => {
     try {
       dispatch({
         type: GET_STUDENT_REQUEST,
       });
         
-      const { data } = await axios.get('https://recor-live.herokuapp.com/api/');
+      const { data } = await axios.get(`http://127.0.0.1:8000/api${keywor}`);
   
       dispatch({
         type: GET_STUDENT_SUCCESS,

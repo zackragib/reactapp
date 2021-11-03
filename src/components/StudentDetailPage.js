@@ -14,10 +14,10 @@ function StudentDetailPage({ match , history}) {
    
     const studentId = match.params.id
     const studentDetail = useSelector((state) => state.studentDetail)
-    const { student, error, loading } = studentDetail
+    const { student, loading } = studentDetail
 
     const studentUpdate= useSelector((state) => state.studentUpdate)
-    const { error: updateError, success: updateSuccess, loading:updateLoading } = studentUpdate
+    const { success: updateSuccess, loading:updateLoading } = studentUpdate
 
     const dispatch = useDispatch();
     useEffect(() => {

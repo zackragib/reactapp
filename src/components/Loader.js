@@ -4,7 +4,7 @@ import { Spinner } from 'react-bootstrap'
 function Loader() {
     return (
         <Spinner 
-            animation="border"
+            animation="grow"
             variant='success'
             role="status"
              style= {{
