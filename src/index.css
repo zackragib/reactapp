@@ -19,3 +19,20 @@ h2{
 .redCol{
   background-color: rgb(243, 203, 203);
 }
+
+button.slick-arrow{
+  
+  background-color: black;
+  border-radius: 50%;
+}
+
+button.slick-arrow:hover{
+  
+  background-color: aquamarine;
+}
+.circl{
+  width: 300px;
+  height: 300px;
+  background-color: burlywood;
+  border-radius: 50%;
+}

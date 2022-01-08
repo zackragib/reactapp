@@ -2,6 +2,7 @@ import {
   GET_STUDENT_REQUEST,
   GET_STUDENT_SUCCESS,
   GET_STUDENT_FAIL,
+  GET_MORE_STUDENT_SUCCESS,
 
   STUDENT_DETAIL_REQUEST,
   STUDENT_DETAIL_SUCCESS,
@@ -23,18 +24,24 @@ import {
 } from '../constants/studentConstants'
 import axios from "axios";
 
-export const getStudentList = (keywor) => async (dispatch) => {
+export const getStudentList = (keywor, page) => async (dispatch, getState) => {
     try {
       dispatch({
         type: GET_STUDENT_REQUEST,
       });
-        
-      const { data } = await axios.get(`https://recor-live.herokuapp.com/api${keywor}`);
-  
+      
+      
+      const { data } = await axios.get(`https://recor-live.herokuapp.com/api${keywor}/?page=${page}`);
+     
+      
       dispatch({
         type: GET_STUDENT_SUCCESS,
         payload: data,
       });
+      
+     
+      
+    
         
     } catch (error) {
       dispatch({
@@ -47,6 +54,7 @@ export const getStudentList = (keywor) => async (dispatch) => {
     }
 };
   
+
 
 export const getStudentDetail = (id) => async (dispatch) => {
   try {

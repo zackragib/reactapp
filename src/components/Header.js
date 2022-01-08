@@ -19,9 +19,9 @@ function Header() {
                             <Nav.Link>Add</Nav.Link>
                             </LinkContainer>
                 </Nav>
-               
+                <SearchBx/>
                     </Navbar.Collapse>
-                    <SearchBx/>
+                    
             </Container>
             </Navbar>
         </div>

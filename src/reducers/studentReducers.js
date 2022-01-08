@@ -3,6 +3,10 @@ import {
     GET_STUDENT_SUCCESS,
     GET_STUDENT_FAIL,
 
+    GET_MORE_STUDENT_REQUEST,
+    GET_MORE_STUDENT_SUCCESS,
+    GET_MORE_STUDENT_FAIL,
+
     STUDENT_DETAIL_REQUEST,
     STUDENT_DETAIL_SUCCESS,
     STUDENT_DETAIL_FAIL,
@@ -23,19 +27,27 @@ import {
     STUDENT_DELETE_RESET,
     
 } from '../constants/studentConstants'
+import { useSelector, useDispatch } from 'react-redux'
 
-export const getStudentReducer =(state ={students : []}, action) => {
+
+export const getStudentReducer = (state = { students: [ ] }, action) => {
+    
+    
     switch(action.type){
         case GET_STUDENT_REQUEST:
             return{
                 loading: true
             }
         
+           
         case GET_STUDENT_SUCCESS:
             return{
                 loading: false,
                 students : action.payload
             }
+        
+        
+        
         case GET_STUDENT_FAIL:
             return{
                 loading: false,
@@ -47,7 +59,10 @@ export const getStudentReducer =(state ={students : []}, action) => {
 
 }
 
-export const studentDetailReducer =(state ={student : {}}, action) => {
+
+
+
+export const studentDetailReducer = (state = { student: {} }, action) => {
     switch(action.type){
         case STUDENT_DETAIL_REQUEST:
             return{

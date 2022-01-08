@@ -3,6 +3,7 @@ import { addSumData } from './reducers/addReducer'
 import { productListReducers } from './reducers/productReducers'
 import { getStudentReducer, studentDetailReducer , studentUpdateReducer, studentCreateReducer, studentDeleteReducer} from './reducers/studentReducers'
 import thunk from 'redux-thunk'
+import { colorListReducers } from './reducers/colorReducers'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 
@@ -14,6 +15,7 @@ const reducer = combineReducers({
     studentUpdate: studentUpdateReducer,
     studentCreate: studentCreateReducer,
     studentDelete: studentDeleteReducer,
+    colorList : colorListReducers,
 
 })
 const middleware = [thunk]
